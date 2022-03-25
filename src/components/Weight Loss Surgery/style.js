@@ -192,7 +192,6 @@ export const linkStyle = {
 export const linkStyleAccordion = {
     display: 'block',
     width: '100%',
-    color: '#676767',
     textDecoration: 'none',
     padding: '8px 10px 8px 0',
 };
@@ -308,4 +307,8 @@ export const RouxBlueText = styled.span`
     font-size: 22px;
     color: #2cc0d6;
     font-weight: 700;
+`;
+
+export const SpanColor = styled.span`
+    color: #676767;
 `;

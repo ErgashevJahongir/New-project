@@ -7,7 +7,12 @@ import MuiAccordionDetails from '@material-ui/core/AccordionDetails';
 import MuiListItem from '@material-ui/core/ListItem';
 import MuiAccordionSummary from '@material-ui/core/AccordionSummary';
 import MuiTypography from '@material-ui/core/Typography';
-import { LeftContentMenu, linkStyle, linkStyleAccordion } from './style';
+import {
+    LeftContentMenu,
+    linkStyle,
+    linkStyleAccordion,
+    SpanColor,
+} from './style';
 import { Link, NavLink } from 'react-router-dom';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // import MuiIconButton from '@material-ui/core/IconButton';
@@ -148,7 +153,9 @@ const LeftMenu = () => {
                                     className="listLink"
                                     style={linkStyleAccordion}
                                 >
-                                    <span>Roux-en-Y Gastric Bypass</span>
+                                    <SpanColor>
+                                        Roux-en-Y Gastric Bypass
+                                    </SpanColor>
                                 </NavLink>
                             </Typography>
                         </ListItem>
@@ -163,7 +170,7 @@ const LeftMenu = () => {
                                     className="listLink"
                                     style={linkStyleAccordion}
                                 >
-                                    <span>Sleeve Gastrectomy</span>
+                                    <SpanColor>Sleeve Gastrectomy</SpanColor>
                                 </NavLink>
                             </Typography>
                         </ListItem>
@@ -178,7 +185,7 @@ const LeftMenu = () => {
                                     className="listLink"
                                     style={linkStyleAccordion}
                                 >
-                                    <span>Mini Gastric Bypass</span>
+                                    <SpanColor>Mini Gastric Bypass</SpanColor>
                                 </NavLink>
                             </Typography>
                         </ListItem>
@@ -193,7 +200,9 @@ const LeftMenu = () => {
                                     className="listLink"
                                     style={linkStyleAccordion}
                                 >
-                                    <span>Banded Bariatric Procedures</span>
+                                    <SpanColor>
+                                        Banded Bariatric Procedures
+                                    </SpanColor>
                                 </NavLink>
                             </Typography>
                         </ListItem>
@@ -208,7 +217,7 @@ const LeftMenu = () => {
                                     className="listLink"
                                     style={linkStyleAccordion}
                                 >
-                                    <span>Gastric Banding</span>
+                                    <SpanColor>Gastric Banding</SpanColor>
                                 </NavLink>
                             </Typography>
                         </ListItem>
@@ -223,7 +232,7 @@ const LeftMenu = () => {
                                     className="listLink"
                                     style={linkStyleAccordion}
                                 >
-                                    <span>Intra Gastric Balloon</span>
+                                    <SpanColor>Intra Gastric Balloon</SpanColor>
                                 </NavLink>
                             </Typography>
                         </ListItem>
