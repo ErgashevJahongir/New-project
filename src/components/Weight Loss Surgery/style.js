@@ -184,6 +184,7 @@ export const AccordionLink = styled(Link)`
 export const linkStyle = {
     display: 'block',
     width: '100%',
+    color: 'inherit',
     padding: '12px 10px 12px 0',
     textDecoration: 'none',
 };
@@ -191,6 +192,7 @@ export const linkStyle = {
 export const linkStyleAccordion = {
     display: 'block',
     width: '100%',
+    color: '#676767',
     textDecoration: 'none',
     padding: '8px 10px 8px 0',
 };
