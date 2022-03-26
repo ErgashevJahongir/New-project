@@ -1,4 +1,11 @@
-import { Heading, HeadingBlog, Image, ImageBlog, RightContent } from '../style';
+import {
+    FaqsAccordion,
+    Heading,
+    HeadingBlog,
+    Image,
+    ImageBlog,
+    RightContent,
+} from '../style';
 import { styled } from '@mui/material/styles';
 import React, { useState } from 'react';
 import Accordion from '@mui/material/Accordion';
@@ -143,7 +150,6 @@ const Index = () => {
         setFaqsAccardion([...faqsAccardion]);
         panel.bolIcon = !panel.bolIcon;
     };
-    // useEffect((faqsAccordion) => {}, [faqsAccordion]);
 
     return (
         <RightContent>
@@ -162,7 +168,7 @@ const Index = () => {
                 return (
                     <Accordion
                         key={id}
-                        style={{ paddingTop: '30px', boxShadow: 'none' }}
+                        style={FaqsAccordion}
                         onChange={handleChange(accardion)}
                     >
                         <AccordionSummary

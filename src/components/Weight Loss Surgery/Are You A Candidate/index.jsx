@@ -12,10 +12,7 @@ import {
 const index = () => {
     return (
         <RightContent>
-            <div>
-                <Heading>Weight-loss Surgery: how do I decide?</Heading>
-            </div>
-
+            <Heading>Weight-loss Surgery: how do I decide?</Heading>
             <Condidat>
                 <CondidatText>
                     <CondidatH3>

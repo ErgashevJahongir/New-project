@@ -15,7 +15,6 @@ import {
 } from './style';
 import { Link, NavLink } from 'react-router-dom';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import MuiIconButton from '@material-ui/core/IconButton';
 
 const ListItem = withStyles({
     root: {
@@ -93,47 +92,54 @@ const useStyles = makeStyles((theme) =>
     })
 );
 
-const LeftMenu = () => {
+const LeftMenu = ({ expanded, setExpanded }) => {
     const classes = useStyles();
+
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
     return (
         <LeftContentMenu>
-            <Accordion>
+            <Accordion
+                expanded={expanded === 'panel1'}
+                onChange={handleChange('panel1')}
+            >
                 <AccordionSummary
                     className={classes.panelSummary}
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
                     <Typography className={classes.heading}>
-                        <NavLink to="/" className="link" style={linkStyle}>
+                        <Link
+                            to="/"
+                            className={
+                                expanded === 'panel1' ? 'active' : 'link'
+                            }
+                            style={linkStyle}
+                        >
                             <span className="effet"></span>
                             <span>Overview</span>
-                        </NavLink>
+                        </Link>
                     </Typography>
                 </AccordionSummary>
             </Accordion>
-            <Accordion>
+            <Accordion
+                expanded={expanded === 'panel2'}
+                onChange={handleChange('panel2')}
+            >
                 <AccordionSummary
                     className={classes.panelSummary}
-                    expandIcon={
-                        <ExpandMoreIcon
-                            style={{ backgroundColor: '#f8f8f8' }}
-                        />
-                    }
+                    expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
                     id="panel2a-header"
                 >
                     <Typography className={classes.heading}>
                         <Link
                             to="#"
-                            onClick={(e) => {
-                                if (e.target.className === 'link') {
-                                    e.target.className += ' active';
-                                } else {
-                                    e.target.className = 'link';
-                                }
-                            }}
                             style={linkStyle}
-                            className="link"
+                            className={
+                                expanded === 'panel2' ? 'active' : 'link'
+                            }
                         >
                             <span className="effet"></span>
                             Procedures
@@ -239,25 +245,33 @@ const LeftMenu = () => {
                     </Grid>
                 </AccordionDetails>
             </Accordion>
-            <Accordion>
+            <Accordion
+                expanded={expanded === 'panel3'}
+                onChange={handleChange('panel3')}
+            >
                 <AccordionSummary
                     className={classes.panelSummary}
                     aria-controls="panel1a-content"
                     id="panel3a-header"
                 >
                     <Typography className={classes.heading}>
-                        <NavLink
+                        <Link
                             to="/candidate"
-                            className="link"
+                            className={
+                                expanded === 'panel3' ? 'active' : 'link'
+                            }
                             style={linkStyle}
                         >
                             <span className="effet"></span>
                             <span>Are you candidate</span>
-                        </NavLink>
+                        </Link>
                     </Typography>
                 </AccordionSummary>
             </Accordion>
-            <Accordion>
+            <Accordion
+                expanded={expanded === 'panel4'}
+                onChange={handleChange('panel4')}
+            >
                 <AccordionSummary
                     className={classes.panelSummary}
                     aria-controls="panel1a-content"
@@ -267,10 +281,16 @@ const LeftMenu = () => {
                         className={classes.heading}
                         style={{ margin: ' 0' }}
                     >
-                        <NavLink to="/faqs" className="link" style={linkStyle}>
+                        <Link
+                            to="/faqs"
+                            className={
+                                expanded === 'panel4' ? 'active' : 'link'
+                            }
+                            style={linkStyle}
+                        >
                             <span className="effet"></span>
                             <span>FAQs</span>
-                        </NavLink>
+                        </Link>
                     </Typography>
                 </AccordionSummary>
             </Accordion>

@@ -45,6 +45,10 @@ img {
 export const Container = styled.div`
     margin: 0 auto;
     width: 1200px;
+    @media screen and (max-width: 1200px) {
+        width: 100%;
+        padding: 0 20px;
+    }
 `;
 
 export const TopContent = styled.div`
@@ -64,22 +68,36 @@ export const TopBlog = styled.div`
     padding: 45px 120px;
     border-radius: 15px;
     text-align: center;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 45px 0;
+    }
 `;
 
 export const TopTitle = styled.h1`
     font-size: 35px;
     color: #fff;
     padding-bottom: 15px;
+    @media screen and (max-width: 768px) {
+        font-size: 24px;
+    }
 `;
 
 export const LeftContentMenu = styled.div`
     width: 23%;
     color: var(--text-color);
+    margin-right: 20px;
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 export const RightContent = styled.div`
     width: 73%;
     color: var(--text-color);
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 export const HeadingBlog = styled.div`
@@ -92,6 +110,9 @@ export const Heading = styled.h1`
     font-weight: 700;
     padding-bottom: 20px;
     font-size: 30px;
+    @media screen and (max-width: 768px) {
+        margin-top: 25px;
+    }
 `;
 
 export const BlueLink = styled.a`
@@ -122,6 +143,14 @@ export const Image = styled.img`
 
 export const ImageBlog = styled.div`
     text-align: center;
+    @media screen and (max-width: 768px) {
+        margin-top: 30px;
+    }
+`;
+
+export const BlackParagraph = styled.p`
+    font-size: 17px;
+    color: var(--heading-color);
 `;
 
 export const SliderContent = styled.div`
@@ -131,6 +160,9 @@ export const SliderContent = styled.div`
 
 export const Condidat = styled.div`
     display: flex;
+    @media screen and (max-width: 1000px) {
+        flex-direction: column-reverse;
+    }
 `;
 
 export const CondidatText = styled.div`
@@ -152,6 +184,14 @@ export const CondidatBalckH3 = styled(CondidatH3)`
 
 export const CondidatImg = styled.img`
     max-width: 530px;
+    @media screen and (max-width: 1000px) {
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+    }
+    @media screen and (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 export const Li = styled.li`
@@ -173,6 +213,10 @@ export const Li = styled.li`
 
 export const SliderImg = styled.img`
     margin: 0 auto;
+    @media screen and (max-width: 1100px) {
+        width: 100%;
+        padding: 0 2px;
+    }
 `;
 
 export const AccordionLink = styled(Link)`
@@ -237,31 +281,70 @@ export const Flex = styled.div`
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
+    @media screen and (max-width: 1000px) {
+        flex-direction: column;
+    }
 `;
 
 export const FlexImg = styled.img`
     width: 345px;
     height: 300px;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     margin-bottom: 5px;
+    @media screen and (max-width: 1000px) {
+        width: 100%;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0 30px;
+    }
+    @media screen and (max-width: 768px) {
+        min-height: auto;
+    }
 `;
 
 export const GastricImg = styled.img`
     margin-left: 30px;
     margin-bottom: 5px;
     float: right;
+    @media screen and (max-width: 1000px) {
+        float: none;
+        width: 100%;
+        min-height: 100vh;
+        margin-left: 0;
+    }
+    @media screen and (max-width: 768px) {
+        min-height: auto;
+    }
 `;
 
 export const MiniGastricImg = styled.img`
     margin-left: 30px;
     margin-bottom: 5px;
     float: right;
+    @media screen and (max-width: 1000px) {
+        float: none;
+        width: 90%;
+        min-height: 100vh;
+        text-align: center;
+    }
+    @media screen and (max-width: 768px) {
+        min-height: auto;
+    }
 `;
 
 export const SeleeveImg = styled.img`
     margin-left: 30px;
     margin-bottom: 5px;
     float: right;
+    @media screen and (max-width: 1000px) {
+        float: none;
+        width: 100%;
+        min-height: 100vh;
+        margin-left: 0;
+    }
+    @media screen and (max-width: 768px) {
+        min-height: auto;
+    }
 `;
 
 export const BandedHeading2 = styled.h2`
@@ -275,6 +358,28 @@ export const BandedHeading2 = styled.h2`
 
 export const BandedImg = styled.img`
     float: right;
+    @media screen and (max-width: 1000px) {
+        float: none;
+        width: 100%;
+        min-height: 100vh;
+        margin-left: 0;
+    }
+    @media screen and (max-width: 768px) {
+        min-height: auto;
+    }
+`;
+
+export const BandedImgLeft = styled.img`
+    float: left;
+    @media screen and (max-width: 1000px) {
+        float: none;
+        width: 100%;
+        min-height: 100vh;
+        margin-left: 0;
+    }
+    @media screen and (max-width: 768px) {
+        min-height: auto;
+    }
 `;
 
 export const BandedFlex = styled.div`
@@ -286,6 +391,12 @@ export const BandedFlex = styled.div`
     padding-top: 55px;
     float: left;
     padding-right: 50px;
+    @media screen and (max-width: 1000px) {
+        float: none;
+        padding: 30px 0 35px 0;
+        flex-direction: column;
+        font-size: 22px;
+    }
 `;
 
 export const BigText = styled.p`
@@ -312,3 +423,18 @@ export const RouxBlueText = styled.span`
 export const SpanColor = styled.span`
     color: #676767;
 `;
+
+export const FaqsAccordion = {
+    paddingTop: '30px',
+    boxShadow: 'none',
+};
+
+export const breadcrumbColor = {
+    color: '#c3fbff',
+    textDecoration: 'none',
+};
+
+export const activeBreadcrumbColor = {
+    color: '#fff',
+    textDecoration: 'none',
+};

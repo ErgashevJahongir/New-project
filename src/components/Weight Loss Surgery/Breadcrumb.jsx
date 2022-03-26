@@ -2,6 +2,7 @@ import Typography from '@mui/material/Typography';
 import Breadcrumbs from '@mui/material/Breadcrumbs';
 import HomeIcon from '@mui/icons-material/Home';
 import { Link } from 'react-router-dom';
+import { activeBreadcrumbColor, breadcrumbColor } from './style';
 
 const routes = [
     {
@@ -42,22 +43,67 @@ const routes = [
     },
 ];
 
-export const Breadcrumb = ({ location }) => {
+export const Breadcrumb = ({ location, setExpanded }) => {
+    const handleChange = (panel) => () => {
+        setExpanded(panel);
+    };
+
     return (
-        <Breadcrumbs aria-label="breadcrumb">
-            <Link style={{ color: '#c3fbff', textDecoration: 'none' }} to="/">
+        <Breadcrumbs
+            style={{ color: '#c3fbff' }}
+            aria-label="breadcrumb"
+            className="center"
+        >
+            <Link style={breadcrumbColor} to="#">
                 <HomeIcon />
             </Link>
-            <Link style={{ color: '#c3fbff', textDecoration: 'none' }} to="/">
+            <Link
+                style={breadcrumbColor}
+                onClick={handleChange('panel1')}
+                to="/"
+            >
                 Weight Loss Surgery
             </Link>
-            <Typography color="white">
-                {routes.map((rout) => {
-                    if (rout.path === location.pathname) {
-                        return rout.breadcrumb;
+            {routes.map((rout) => {
+                if (rout.path === location.pathname) {
+                    let position = rout.breadcrumb.search('/');
+                    if (position > 0) {
+                        let frist = rout.breadcrumb.slice(0, position - 1);
+                        let second = rout.breadcrumb.slice(
+                            position + 2,
+                            rout.breadcrumb.length - 1
+                        );
+                        return (
+                            <Typography key={rout.breadcrumb + 'a'}>
+                                <Link
+                                    style={breadcrumbColor}
+                                    to={rout.path}
+                                    key={rout.breadcrumb}
+                                >
+                                    {frist}
+                                    {' / '}
+                                </Link>
+                                <Link
+                                    style={activeBreadcrumbColor}
+                                    to={rout.path}
+                                    key={rout.path}
+                                >
+                                    {second}
+                                </Link>
+                            </Typography>
+                        );
                     }
-                })}
-            </Typography>
+                    return (
+                        <Link
+                            style={activeBreadcrumbColor}
+                            to={rout.path}
+                            key={rout.breadcrumb}
+                        >
+                            {rout.breadcrumb}
+                        </Link>
+                    );
+                }
+            })}
         </Breadcrumbs>
     );
 };

@@ -15,8 +15,11 @@
 
 .section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 50px 0;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
 }
 
 .active.listLink span,
@@ -46,12 +49,24 @@
 
 .slick-prev {
     left: -44px;
+    @media screen and (max-width: 768px) {
+        left: -30px;
+    }
+}
+
+.slick-next {
+    @media screen and (max-width: 768px) {
+        right: -19px;
+    }
 }
 
 .slick-prev:before,
 .slick-next:before {
     color: var(--heading-bg);
     font-size: 40px;
+    @media screen and (max-width: 768px) {
+        font-size: 30px;
+    }
 }
 
 .slick-next:before {
