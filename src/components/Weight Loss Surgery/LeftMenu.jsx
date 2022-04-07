@@ -92,11 +92,51 @@ const useStyles = makeStyles((theme) =>
     })
 );
 
+const routes = [
+    {
+        path: '/',
+        breadcrumb: 'Overview',
+    },
+    {
+        path: '/procedures/roux-en-y-gastric-bypass',
+        breadcrumb: 'Procedures / Roux-en-Y Gastric Bypass',
+    },
+    {
+        path: '/procedures/sleeve-gastrectomy',
+        breadcrumb: 'Procedures / Sleeve Gastrectomy',
+    },
+    {
+        path: '/procedures/mini-gastric-bypass',
+        breadcrumb: 'Procedures / Mini Gastric Bypass',
+    },
+    {
+        path: '/procedures/banded-bariatric-procedures',
+        breadcrumb: 'Procedures / Banded Bariatric Procedures',
+    },
+    {
+        path: '/procedures/gastric-banding',
+        breadcrumb: 'Procedures / Gastric Banding',
+    },
+    {
+        path: '/procedures/intra-gastric-balloon',
+        breadcrumb: 'Procedures / Intra Gastric Balloon',
+    },
+    {
+        path: '/candidate',
+        breadcrumb: 'Are You A Candidate',
+    },
+    {
+        path: '/faqs',
+        breadcrumb: 'FAQs',
+    },
+];
+
 const LeftMenu = ({ expanded, setExpanded }) => {
     const classes = useStyles();
 
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
+        localStorage.setItem('name', JSON.stringify(panel));
     };
     return (
         <LeftContentMenu>

@@ -6,7 +6,11 @@ import { useState } from 'react';
 
 function Layout() {
     let location = useLocation();
-    const [expanded, setExpanded] = useState('panel1');
+    const [expanded, setExpanded] = useState(() => {
+        const saved = localStorage.getItem('name');
+        const initialValue = JSON.parse(saved);
+        return initialValue || 'panel1';
+    });
 
     return (
         <>
@@ -18,6 +22,7 @@ function Layout() {
                         <LeftMenu
                             expanded={expanded}
                             setExpanded={setExpanded}
+                            location={location}
                         />
                         <Outlet />
                     </div>
